@@ -72,3 +72,10 @@ html {
     max-width: 100%;
     max-height: 100%;
 }
+.indigo{
+    background-color: red;
+}
+.btn,
+.btn-large{
+    background-color: red;
+}

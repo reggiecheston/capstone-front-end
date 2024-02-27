@@ -63,14 +63,14 @@ const Navbar = () => {
           <ul className="right hide-on-med-and-down">
             <li>
               {/* Account link */}
-              <a href="/account" onClick={handleLinkClick}>
-                Account
+              <a href="#" onClick={handleLinkClick}>
+                Staff
               </a>
             </li>
             <li>
               {/* Quiz Generation link */}
-              <a href="/categories" onClick={handleLinkClick}>
-                Quiz Generation
+              <a href="#" onClick={handleLinkClick}>
+                Reports
               </a>
             </li>
           </ul>
@@ -85,14 +85,14 @@ const Navbar = () => {
             }}>
             <li>
               {/* Account link in mobile menu */}
-              <a href="/account" onClick={handleLinkClick}>
-                Account
+              <a href="#" onClick={handleLinkClick}>
+                Staff
               </a>
             </li>
             <li>
               {/* Quiz Generation link in mobile menu */}
-              <a href="categories" onClick={handleLinkClick}>
-                Quiz Generation
+              <a href="#" onClick={handleLinkClick}>
+                Reports
               </a>
             </li>
           </ul>
