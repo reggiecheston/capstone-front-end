@@ -17,14 +17,6 @@ export default function LoginForm() {
       <div className="section" />
       <main>
         <center>
-          <img
-            className="responsive-img"
-            style={{ width: 250 }}
-            src="https://miro.medium.com/v2/resize:fit:640/format:webp/0*HAKU6Jfs7dtWtmhG.gif"
-          />
-          <div className="section" />
-          <h5 className="indigo-text">Please, login into your account</h5>
-          <div className="section" />
           <div className="container">
             <div
               className="z-depth-1 grey lighten-4 row"
@@ -33,7 +25,10 @@ export default function LoginForm() {
                 padding: "32px 48px 0px 48px",
                 border: "1px solid #EEE",
               }}>
-              <form className="col s12" method="post">
+              <form className="col s12">
+                <div className="section" />
+                <h5 className="indigo-text">Please login into your account</h5>
+                <div className="section" />
                 <div className="row">
                   <div className="col s12"></div>
                 </div>
