@@ -73,6 +73,7 @@ const Navbar = () => {
                 Reports
               </a>
             </li>
+           
           </ul>
 
           {/* Mobile navigation menu */}
