@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="nav-wrapper container" ref={navRef}>
           {/* Brand logo */}
           <a id="logo-container" href="/" className="brand-logo">
-            DeBOOger
+            CodeBeetle
           </a>
 
           {/* Desktop navigation links */}

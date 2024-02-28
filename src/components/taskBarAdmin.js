@@ -2,6 +2,12 @@ import "../css/userViews.css";
 import React, { useEffect } from 'react';
 import M from 'materialize-css';
 
+
+var Title = "Title"
+
+
+
+
 const CollapsibleComponent = () => {
   useEffect(() => {
     // This code will be executed after the component mounts
@@ -12,12 +18,12 @@ const CollapsibleComponent = () => {
 
   return (
     <div>
-      {/* Your JSX code for collapsible elements */}
-   
-      <ul class="collapsible expandable">
+    
+    <ul class="collapsible expandable">
+      
   <li>
     <div className="collapsible-header black-text">
-      <i className="material-icons">filter_drama</i>First
+      <i className="material-icons">reorder</i>{Title}
     </div>
 
 
@@ -27,29 +33,8 @@ const CollapsibleComponent = () => {
       <span>Lorem ipsum dolor sit amet.</span>
     </div>
   </li>
-
-
-  <li>
-    <div className="collapsible-header black-text">
-      <i className="material-icons">place</i>Second
-    </div>
-
-
-
-    <div className="collapsible-body black-text">
-      <span>Lorem ipsum dolor sit amet.</span>
-    </div>
-  </li>
-  <li>
-    <div className="collapsible-header black-text">
-      <i className="material-icons">whatshot</i>Third
-    </div>
-
-    <div className="collapsible-body black-text">
-      <span>Lorem ipsum dolor sit amet.</span>
-    </div>
-  </li>
-</ul>
+  
+  </ul>
     </div>
   );
 }
@@ -81,7 +66,7 @@ export default function TaskBarAdmin() {
       <div className="card blue-grey darken-1">
         <div className="card-content white-text">
           <span className="card-title">Card Title</span>
-       
+         
         <CollapsibleComponent></CollapsibleComponent>
 
           
@@ -94,7 +79,7 @@ export default function TaskBarAdmin() {
 
 
 
-
+        
       </div>
     </div>
   </div>
