@@ -19,15 +19,15 @@ export default function LoginForm() {
         <center>
           <div className="container">
             <div
-              className="z-depth-1 grey lighten-4 row"
+              className=" blue-grey lighten-4 row"
               style={{
                 display: "inline-block",
                 padding: "32px 48px 0px 48px",
                 border: "1px solid #EEE",
               }}>
-              <form className="col s12">
+              <form className="col s12" method="post" action="/login">
                 <div className="section" />
-                <h5 className="indigo-text">Please login into your account</h5>
+                <h5 className="black-text">Please login into your account</h5>
                 <div className="section" />
                 <div className="row">
                   <div className="col s12"></div>
@@ -54,7 +54,7 @@ export default function LoginForm() {
                     <label htmlFor="password">Enter your password</label>
                   </div>
                   <label style={{ alignContent: "center" }}>
-                    <a className="pink-text" href="#!">
+                    <a className="deep-orange-text" href="#!">
                       <b> Forgot Password?</b>
                     </a>
                   </label>
@@ -65,15 +65,18 @@ export default function LoginForm() {
                     <button
                       type="submit"
                       name="btn_login"
-                      className="col s12 btn btn-large waves-effect indigo">
+                      className="col s12 btn btn-large waves-effect teal lighten-2">
                       Login
                     </button>
                   </div>
+                  <a className="deep-orange-text" href="#!">
+                    {" "}
+                    Contact Support
+                  </a>
                 </center>
               </form>
             </div>
           </div>
-          <a href="#!"> Contact Support</a>
         </center>
         <div className="section" />
         <div className="section" />
