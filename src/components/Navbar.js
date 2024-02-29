@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../materialize/css/materialize.min.css";
-import "../css/login.css";
+import "../css/beetle.css";
+import beetleLogo from "../images/code-beetle-logo.png";
 
 const Navbar = () => {
   // State to manage the mobile navigation menu
@@ -52,12 +53,19 @@ const Navbar = () => {
   return (
     <div>
       {/* Navigation bar with desktop and mobile versions */}
-      <nav className="blue" role="navigation">
+      <nav className="teal lighten-2" role="navigation">
         <div className="nav-wrapper container" ref={navRef}>
           {/* Brand logo */}
-          <a id="logo-container" href="/" className="brand-logo">
-            DeBOOger
-          </a>
+
+          <div className="beetle">
+            <a href="/">
+              <img
+                src={beetleLogo}
+                id="logo-container"
+                className="brand-logo"
+              />
+            </a>
+          </div>
 
           {/* Desktop navigation links */}
           <ul className="right hide-on-med-and-down">
@@ -73,7 +81,6 @@ const Navbar = () => {
                 Reports
               </a>
             </li>
-           
           </ul>
 
           {/* Mobile navigation menu */}
