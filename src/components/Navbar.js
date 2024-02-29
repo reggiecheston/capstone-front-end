@@ -57,15 +57,6 @@ const Navbar = () => {
         <div className="nav-wrapper container" ref={navRef}>
           {/* Brand logo */}
 
-          <div className="beetle">
-            <a href="/">
-              <img
-                src={beetleLogo}
-                id="logo-container"
-                className="brand-logo"
-              />
-            </a>
-          </div>
 
           {/* Desktop navigation links */}
           <ul className="right hide-on-med-and-down">
