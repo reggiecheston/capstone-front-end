@@ -72,8 +72,8 @@ const handleSubmit = async (e) => {
               className=" blue-grey lighten-4 row"
               style={{
                 display: "inline-block",
-                padding: "32px 48px 0px 48px",
-                border: "1px solid #EEE",
+                padding: "32px 48px 20px 48px",
+                borderRadius: "6px",
               }}>
               <form className="col s12" method="post" onSubmit={handleSubmit}>
                 <div className="section" />
@@ -85,19 +85,21 @@ const handleSubmit = async (e) => {
                 <div className="row">
                   <div className="input-field col s12">
                     <input
-                      className="validate"
+                      placeholder="Enter your email"
+                      className="validate black-text"
                       type="email"
                       value={email}
                       onChange={(ev) => setEmail(ev.target.value)}
                       name="email"
                       id="email"
                     />
-                    <label htmlFor="email">Enter your email</label>
+                    <label htmlFor="email black-text"></label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
                     <input
+                      placeholder="Enter your password"
                       className="validate"
                       type="password"
                       value={password}
@@ -105,10 +107,10 @@ const handleSubmit = async (e) => {
                       name="password"
                       id="password"
                     />
-                    <label htmlFor="password">Enter your password</label>
+                    <label htmlFor="password"></label>
                   </div>
                   <label style={{ alignContent: "center" }}>
-                    <a className="deep-orange-text" href="#!">
+                    <a className="f" href="#!">
                       <b> Forgot Password?</b>
                     </a>
                   </label>
@@ -121,12 +123,12 @@ const handleSubmit = async (e) => {
                       value="submit"
                       type="submit"
                       name="btn_login"
-                      className="col s12 btn btn-large waves-effect teal lighten-2">
-                    
+                      className="col s12 btn btn-large waves-effect teal lighten-2"
+                      style={{ borderRadius: "6px" }}>
                       Login
                     </button>
                   </div>
-                  <a className="deep-orange-text" href="#!">
+                  <a className="f" id="contact" href="#!">
                     {" "}
                     Contact Support
                   </a>
