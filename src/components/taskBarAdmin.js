@@ -1,43 +1,23 @@
 import "../css/userViews.css";
 import React, { useEffect } from 'react';
-import M from 'materialize-css';
-
+import CollapsibleComponent from './collapse';
 
 var Title = "Title"
 
-
-
-
-const CollapsibleComponent = () => {
-  useEffect(() => {
-    // This code will be executed after the component mounts
-    // and the DOM is ready
-    var elems = document.querySelectorAll('.collapsible.expandable');
-    var instances = M.Collapsible.init(elems, {accordion: false}); // You can pass options here if needed
-  }, []); // Empty dependency array ensures that this effect runs only once after mounting
-
-  return (
-    <div>
-    
-    <ul class="collapsible expandable">
-      
-  <li>
-    <div className="collapsible-header black-text">
-      <i className="material-icons">reorder</i>{Title}
-    </div>
-
-
-
-
-    <div className="collapsible-body black-text">
-      <span>Lorem ipsum dolor sit amet.</span>
-    </div>
-  </li>
-  
-  </ul>
-    </div>
-  );
+const props = {
+  Head: "Head",
+  Count: "Count",
+  Category: "Category",
+  Priority: "Priority",
+  Title: "Title",
+  Summary: "Description",
+  Date: "Date",
+  Developer: "Developer",
+  Staff: "Staff"
+ 
 }
+
+
 
 
  
@@ -65,7 +45,7 @@ export default function TaskBarAdmin() {
     <div className="col s12 m3">
       <div className="card blue-grey darken-1">
         <div className="card-content white-text">
-          <span className="card-title">Card Title</span>
+          <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
          
         <CollapsibleComponent></CollapsibleComponent>
 
@@ -77,14 +57,14 @@ export default function TaskBarAdmin() {
 
 
 
-
+    
 
         
       </div>
     </div>
   </div>
      
- 
+  
       
     </>
   );

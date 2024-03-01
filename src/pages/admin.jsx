@@ -15,7 +15,10 @@ export default function Admin() {
                 
             <div className="row">
                 
-            <TaskBarAdmin></TaskBarAdmin>
+            <TaskBarAdmin>
+  
+
+            </TaskBarAdmin>
             <TaskBarAdmin></TaskBarAdmin>
             <TaskBarAdmin></TaskBarAdmin>
             <TaskBarAdmin></TaskBarAdmin>

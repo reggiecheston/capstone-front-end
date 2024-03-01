@@ -12,7 +12,7 @@ const CollapsibleComponent = () => {
 
   return (
     <div>
-      {/* Your JSX code for collapsible elements */}
+     
    
       <ul class="collapsible expandable">
   <li>
