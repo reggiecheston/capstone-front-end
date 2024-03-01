@@ -55,10 +55,10 @@ const Navbar = () => {
       {/* Navigation bar with desktop and mobile versions */}
       <nav className="teal lighten-2" role="navigation">
         <div className="nav-wrapper container" ref={navRef}>
-          {/* Brand logo */}
-
-
-          {/* Desktop navigation links */}
+          {/* Logo as a link */}
+          <a href="/">
+            <img src={beetleLogo} alt="Beetle Logo" className="brand-logo" />
+          </a>
           <ul className="right hide-on-med-and-down">
             <li>
               {/* Account link */}
@@ -73,7 +73,6 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-
           {/* Mobile navigation menu */}
           <ul
             id="nav-mobile"
@@ -95,7 +94,6 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-
           {/* Mobile menu trigger button */}
           <a
             href="#"
