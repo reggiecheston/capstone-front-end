@@ -62,7 +62,7 @@ const Navbar = () => {
           <ul className="right hide-on-med-and-down">
             <li>
               {/* Account link */}
-              <a href="#" onClick={handleLinkClick}>
+              <a href="/staff" onClick={handleLinkClick}>
                 Staff
               </a>
             </li>
@@ -83,7 +83,7 @@ const Navbar = () => {
             }}>
             <li>
               {/* Account link in mobile menu */}
-              <a href="#" onClick={handleLinkClick}>
+              <a href="/staff" onClick={handleLinkClick}>
                 Staff
               </a>
             </li>
