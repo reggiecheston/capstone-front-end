@@ -8,6 +8,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.3.3",
+>>>>>>> af5d6213e07eb066a0d84eeb72d656b3ff8b79fa
     "cors": "^2.8.5",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0",
@@ -41,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
