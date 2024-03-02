@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import StaffView from "../components/staff"
 import "../css/staff.css";
-import Footer from "../components/footer";
+//import Footer from "../components/footer";
 
 export default function Staff() {
     return (

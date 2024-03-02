@@ -7,16 +7,6 @@ import "../css/style.css";
 import Footer from "../components/footer";
 
 
-
-let guest = 0;
-
-function Cup() {
-  // Bad: changing a preexisting variable!
-  guest = guest + 1;
-  return <h2>Tea cup for guest #{guest}</h2>;
-}
-
-
 export default function Admin() {
     return (
         <div>
@@ -25,14 +15,18 @@ export default function Admin() {
                 <main>
                     <div className="row">
                         <TaskBarAdmin 
-                            
-                                Head="green"
-                                
-                            
-                     />
-                     <TaskBarAdmin/>
-                        <TaskBarAdmin />
-                        <TaskBarAdmin />
+                                Head="Escalated"
+                                Count="5"/>
+
+                        <TaskBarAdmin
+                                Head="New"
+                                Count="5" />
+                        <TaskBarAdmin
+                                Head="In Progress"
+                                Count="5" />
+                        <TaskBarAdmin 
+                                Head="Completed"
+                                Count="5"/>
                     </div>
                 </main>
             </body>
