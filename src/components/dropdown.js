@@ -15,14 +15,14 @@ const MultipleSelect = (props) => {
 
 
       <option value=""  disabled selected>
-        Choose your option
+        {props.dropdownLabel}
       </option>
       
       <option value={1}>{props.Option1}</option>
       <option value={2}>{props.Option2}</option>
       <option value={3}>{props.Option3}</option>
     </select>
-    <label>{props.dropdownLabel}</label>
+    
   </div>
   
   );

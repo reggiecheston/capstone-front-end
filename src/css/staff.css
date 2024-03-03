@@ -3,10 +3,7 @@
     color:#0e304c
 }
 .container2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     max-width: 500px;
     width: 100%;
     background: #FCEDDA;
@@ -14,14 +11,22 @@
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     align-items: center;
+    margin: 4% auto;
+    margin: bottom 2px;
+    color:#0e304c
 }
 .container header {
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;
     text-align: center;
+    
 }
 
+h5{
+    margin-top: 0px;
+    color:#0e304c
+}
 .container .form {
     margin-top: 15px;
 }

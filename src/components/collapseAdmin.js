@@ -7,6 +7,7 @@ import { Form } from 'react-router-dom';
 
 
 
+
 const CollapsibleComponent = (props) => {
   useEffect(() => {
     // Initialize Materialize Collapsible when the component mounts
@@ -30,7 +31,7 @@ const CollapsibleComponent = (props) => {
 
             <p id="summary"><input  className="center-align" type="text" placeholder={props?.Summary} /></p>
 
-            <p id="datelineTop">Due Date:<div className="right">{props?.Date}</div></p>
+            <p id="datelineTop">Due Date:<div className="right">{props?.Date} </div></p>
 
             <div ><p id="datelineBottom">Issuing Staff:<div className="right">{props?.Staff}</div></p></div>
 
@@ -56,6 +57,9 @@ const CollapsibleComponent = (props) => {
              dropdownLabel="Update Status"
             />
             <div className="center-align">
+
+
+
             <button className="btn waves-effect waves-light" type="submit" name="action">Update</button>
             </div>
           </div>
