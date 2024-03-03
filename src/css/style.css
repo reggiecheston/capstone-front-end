@@ -1,10 +1,18 @@
 html{
     height:100vh
 }
-
+.nav{
+height:10vh
+}
+.menuBtn{
+    margin-top: 11%;
+    color:#0e304c;
+    font-weight: 700;
+}
 body {
     width: 100vw;
-    min-height: calc(99vh - 16.5rem);
+    min-height: 63vh;
+    /* min-height: calc(99vh - 15.5rem); */
    
   }
 
@@ -28,4 +36,22 @@ body {
 #summary{
     padding:10px;
     padding-top:0px
+}
+
+#footerLogo{
+    height: 4vw
+}
+.footerText{
+    color:#0e304c;
+    font-weight: 500;
+}
+.footerLinks{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#0e304c;
+    font-weight: 500;
+}
+#supportBox{
+    margin-top: 24px;
+    font-weight: 600;
 }

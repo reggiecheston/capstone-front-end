@@ -53,13 +53,13 @@ export default function Staff() {
   };
 
   return (
-    <>
-      <section className="container2 blue-grey lighten-4">
-        <header>Ticket Submission</header>
+    
+    <body>
+      <section className="container2 blue-grey lighten-4 center">
+        <header><h5>Create New Ticket</h5></header>
         <form className="form" onSubmit={handleSubmit}>
           <div className="input-box">
-            <label>Title</label>
-            <input required="" placeholder="Enter Ticket" type="text" />
+            <input required="" placeholder="Enter Project Name" type="text"  name="enter project name"/>
           </div>
           <div className="column">
             <div className="select-box blue-grey lighten-4">
@@ -93,10 +93,10 @@ export default function Staff() {
             </div>
           </div>
           <div className="input-box text-color-black">
-            <label>Summary</label>
-            <textarea
+            
+            <input
               required=""
-              placeholder="Summary of Ticket"
+              placeholder="Please Give Issue Description Here"
               type="text"
               style={{ height: "150px" }}
             />
@@ -114,6 +114,7 @@ export default function Staff() {
           {/* Display error message if error occurs */}
         </form>
       </section>
-    </>
+    </body>
+   
   );
 }
