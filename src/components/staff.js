@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/staff.css";
 import { useNavigate } from "react-router-dom";
+import ReportFunction from "./reportFunction";
 
 import M from "materialize-css";
 
@@ -10,10 +11,11 @@ export default function Staff() {
   const [priority, setPriority] = useState("");
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
-  const [date, setDate] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false); // Define isLoading state
   const [isOpen, setIsOpen] = useState(false);
+  // const [staffId, setStaffId] = useState(1);
 
   useEffect(() => {
     // Initialize Materialize select
@@ -35,8 +37,8 @@ export default function Staff() {
   const handleSummaryChange = (e) => {
     setSummary(e.target.value);
   };
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
+  const handleDueDateChange = (e) => {
+    setDueDate(e.target.value);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,12 +47,13 @@ export default function Staff() {
       category: category,
       priority: priority,
       title: title,
-      date: date,
+      dueDate: dueDate,
       summary: summary,
+      // staffId: staffId,
     };
 
     try {
-      const response = await fetch("http://localhost:4000/staff", {
+      const response = await fetch("/staff", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,8 +74,9 @@ export default function Staff() {
       setPriority("");
       setTitle("");
       setSummary("");
-      setDate("");
+      setDueDate("");
       setError(null);
+      // setStaffId(1);
     } catch (error) {
       setError(error.message); // Set error state if request fails
     }
@@ -122,7 +126,7 @@ export default function Staff() {
             <select
               id="category"
               value={category}
-              onChange={handlePriorityChange}>
+              onChange={handleCategoryChange}>
               <option value="" disabled></option>
               <option value="functional">functional</option>
               <option value="usability">usability</option>
@@ -145,7 +149,7 @@ export default function Staff() {
               value={priority}
               onChange={handlePriorityChange}>
               <option value="" disabled></option>
-              <option value="small">Small</option>
+              <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>
             </select>
@@ -156,8 +160,8 @@ export default function Staff() {
               required=""
               placeholder="Due Date"
               type="date"
-              onChange={handleDateChange}
-              value={date}
+              onChange={handleDueDateChange}
+              value={dueDate}
             />
           </div>
         </div>
@@ -171,7 +175,7 @@ export default function Staff() {
             style={{ height: "150px" }}
           />
         </div>
-        <button className="teal lighten-2" type="submit  " disabled={isLoading}>
+        <button className="teal lighten-2" type="submit  " disabled={isLoading} onClick={ReportFunction}>
           {" "}
           {/* Disable the button when isLoading is true */}
           {isLoading ? "Submitting..." : "Submit"}{" "}
