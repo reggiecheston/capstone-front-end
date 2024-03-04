@@ -11,7 +11,6 @@ export default function Dev() {
     return (
         <div>
             <Navbar />
-            <body>
                 <main>
                     <div className="row">
 
@@ -26,7 +25,6 @@ export default function Dev() {
                                 Count="5"/>
                     </div>
                 </main>
-            </body>
             <Footer />
         </div>
     );
