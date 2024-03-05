@@ -21,7 +21,7 @@ export default function LoginForm() {
       password: password,
     };
 
-    const response = await fetch("/login", {
+    const response = await fetch("https://code-beetle.glitch.me/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,8 @@ export default function LoginForm() {
                 display: "inline-block",
                 padding: "32px 48px 20px 48px",
                 borderRadius: "6px",
-              }}>
+              }}
+            >
               <form className="col s12" method="post" onSubmit={handleSubmit}>
                 <div className="section" />
                 <h5 className="black-text">Please login into your account</h5>
@@ -116,7 +117,8 @@ export default function LoginForm() {
                       type="submit"
                       name="btn_login"
                       className="col s12 btn btn-large waves-effect teal lighten-2"
-                      style={{ borderRadius: "6px" }}>
+                      style={{ borderRadius: "6px" }}
+                    >
                       Login
                     </button>
                   </div>
