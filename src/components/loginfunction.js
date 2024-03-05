@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-// if posting login info to server i need to fetch it
-// if i am fetching it i need to run a query to validate the login info
-// if i am running a query to validate the login info i need to post it to the server
-
 export default function Login() {
   const Login = (e) => {
     const email = document.getElementById('email').value;
@@ -17,7 +12,7 @@ export default function Login() {
     fetch('http://localhost:4000/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
       },
       body: JSON.stringify({ 
         email: email,

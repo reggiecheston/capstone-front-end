@@ -26,10 +26,10 @@ const handleSubmit = async (e) => {
 
 
     const response = await fetch('/login', {
-      
+
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+    'Content-Type': 'application/json'
     },
     body: JSON.stringify(details)
     
@@ -51,7 +51,7 @@ const handleSubmit = async (e) => {
 
   return (
 
-  
+
 
     <>
       <link
