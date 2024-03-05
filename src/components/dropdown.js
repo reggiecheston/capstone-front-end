@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import M from 'materialize-css'; // Make sure you have imported Materialize CSS library
 
-const MultipleSelect = () => {
+const MultipleSelect = (props) => {
   useEffect(() => {
     // Initialize Materialize form select when the component mounts
     const elems = document.querySelectorAll('select');
@@ -15,14 +15,14 @@ const MultipleSelect = () => {
 
 
       <option value=""  disabled selected>
-        Choose your option
+        {props.dropdownLabel}
       </option>
       
-      <option value={1}>Option 1</option>
-      <option value={2}>Option 2</option>
-      <option value={3}>Option 3</option>
+      <option value={1}>{props.Option1}</option>
+      <option value={2}>{props.Option2}</option>
+      <option value={3}>{props.Option3}</option>
     </select>
-    <label>Materialize Multiple Select</label>
+    
   </div>
   
   );

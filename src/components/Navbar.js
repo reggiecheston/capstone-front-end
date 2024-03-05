@@ -53,23 +53,17 @@ const Navbar = () => {
   return (
     <div>
       {/* Navigation bar with desktop and mobile versions */}
-      <nav className="teal lighten-2" role="navigation">
+      <nav className="teal lighten-2 nav" role="navigation">
         <div className="nav-wrapper container" ref={navRef}>
           {/* Logo as a link */}
           <a href="/">
-            <img src={beetleLogo} alt="Beetle Logo" className="brand-logo" />
+            <img src={beetleLogo} alt="Beetle Logo" className="brand-logo center" />
           </a>
           <ul className="right hide-on-med-and-down">
             <li>
               {/* Account link */}
-              <a href="/staff" onClick={handleLinkClick}>
-                Staff
-              </a>
-            </li>
-            <li>
-              {/* Quiz Generation link */}
-              <a href="#" onClick={handleLinkClick}>
-                Reports
+              <a href="/staff" className="menuBtn" onClick={handleLinkClick}>
+                Create New Ticket
               </a>
             </li>
           </ul>
@@ -83,16 +77,11 @@ const Navbar = () => {
             }}>
             <li>
               {/* Account link in mobile menu */}
-              <a href="/staff" onClick={handleLinkClick}>
-                Staff
+              <a href="/staff" className="menuBtn" onClick={handleLinkClick}>
+                Create Ticket
               </a>
             </li>
-            <li>
-              {/* Quiz Generation link in mobile menu */}
-              <a href="#" onClick={handleLinkClick}>
-                Reports
-              </a>
-            </li>
+            
           </ul>
           {/* Mobile menu trigger button */}
           <a
@@ -103,6 +92,7 @@ const Navbar = () => {
             <i className="material-icons">menu</i>
           </a>
         </div>
+
       </nav>
     </div>
   );

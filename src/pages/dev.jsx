@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "../components/Navbar";
 import "../css/userViews.css";
@@ -9,17 +10,22 @@ import Footer from "../components/footer";
 export default function Dev() {
     return (
         <div>
-        <Navbar></Navbar>
-        <body>
-        <main>
-        <div className="row">
-        <TaskBarDev></TaskBarDev>
-        <TaskBarDev></TaskBarDev>
-        <TaskBarDev></TaskBarDev>
-        </div> 
-        </main>
-        </body>
-        <Footer></Footer>
+            <Navbar />
+                <main>
+                    <div className="row">
+
+                        <TaskBarDev
+                                Head="New"
+                                Count="5" />
+                        <TaskBarDev
+                                Head="In Progress"
+                                Count="5" />
+                        <TaskBarDev 
+                                Head="Completed"
+                                Count="5"/>
+                    </div>
+                </main>
+            <Footer />
         </div>
-    )
+    );
 }

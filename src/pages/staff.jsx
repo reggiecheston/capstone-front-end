@@ -9,6 +9,7 @@ export default function Staff() {
         <div>
             <Navbar></Navbar>
             <StaffView></StaffView>
+            <Footer></Footer>
         </div>
     )
 }
