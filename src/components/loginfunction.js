@@ -1,9 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
-// if posting login info to server i need to fetch it
-// if i am fetching it i need to run a query to validate the login info
-// if i am running a query to validate the login info i need to post it to the server
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const Login = (e) => {
@@ -16,7 +12,7 @@ export default function Login() {
     fetch("https://code-beetle.glitch.me/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email: email,
