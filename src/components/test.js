@@ -61,7 +61,7 @@ const getTicket = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:4000/admin")
+    fetch("https://code-beetle.glitch.me/admin")
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -78,7 +78,7 @@ const getTicket = () => {
       {Array.isArray(data) ? (
         data.map((database) => (
           <CollapsibleComponent
-            key={database.id} // Ensure each item has a unique key
+          
             Category={database.Category}
             Priority={database.Priority}
             Title={database.Title}

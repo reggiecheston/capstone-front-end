@@ -4,7 +4,7 @@ export default function ReportFunction({ summary, priority, title, category, due
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch('http://localhost:4000/staff', {
+    fetch('https://code-beetle.glitch.me/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

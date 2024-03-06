@@ -51,9 +51,9 @@ export default function Staff() {
       summary: summary,
       // staffId: staffId,
     };
-
+// cant test it like this locally so need to push so changes 
     try {
-      const response = await fetch("/staff", {
+      const response = await fetch("e/staff", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
