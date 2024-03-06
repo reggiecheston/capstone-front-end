@@ -53,7 +53,7 @@ export default function Staff() {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/staff", {
+      const response = await fetch("/staff", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
