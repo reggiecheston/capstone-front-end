@@ -61,7 +61,7 @@ const getTicket = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://code-beetle.glitch.me/admin")
+    fetch("https://localhost:4000/admin")
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {

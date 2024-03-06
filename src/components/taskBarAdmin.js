@@ -23,15 +23,13 @@ const TaskBarAdmin = (props) => (
         <div className="card-content white-text">
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
           <CollapsibleComponent  
-          Category= "Category"
-          Priority= "Priority"
-          Title= "Project Title"
-          Summary= "Descriptionnn"
-          Date= "12/12/2021"
-          Staff= "Adrian Brown"/> 
-
-
-
+          
+          category= {category}
+          priority= {priority} 
+          title= {title}
+          summary= {summary}
+          dueDate= {dueDate}
+          staff= {staff}/> 
         </div>
       </div>
     </div>
@@ -56,7 +54,7 @@ export default TaskBarAdmin;
 //   const [data, setData] = useState([]);
 
 //   useEffect(() => {
-//     fetch("https://code-beetle.glitch.me/admin")
+//     fetch("https://localhost:4000/admin")
 //       .then(res => res.json())
 //       .then(data => {
 //         if (Array.isArray(data)) {
