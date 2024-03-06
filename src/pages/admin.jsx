@@ -11,7 +11,6 @@ export default function Admin() {
     return (
         <div>
             <Navbar />
-            <body>
                 <main>
                     <div className="row">
                         <TaskBarAdmin 
@@ -29,7 +28,6 @@ export default function Admin() {
                                 Count="5"/>
                     </div>
                 </main>
-            </body>
             <Footer />
         </div>
     );

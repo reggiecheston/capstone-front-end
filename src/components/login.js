@@ -3,57 +3,47 @@ import "../css/login.css";
 import Login from "./loginfunction";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 export default function LoginForm() {
-
-const navigate = useNavigate();
-const [ email, setEmail] = useState('');
-const [ password, setPassword] = useState('');
-const handleEmailChange = (e) => {
-  setEmail(e.target.value);
-}
-const handlePasswordChange = (e) => {
-  setPassword(e.target.value)
-}
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const details = {
-  email: email,
-  password: password,
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const details = {
+      email: email,
+      password: password,
+    };
 
-    const response = await fetch('/login', {
-      
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(details)
-    
-  });
-  const role = `SELECT admin_id, developer_id FROM staff WHERE email = "${email}"`;
-  if (response.ok) {
-    console.log(response)
-    const data = await response.json();
-    console.log(data)
-    if (data.user[0].admin_id) {
-      navigate('/admin');
-    } else if (data.user[0].developer_id) {
-      navigate('/dev');
-    } else {
-      navigate('/staff');
+    const response = await fetch("https://code-beetle.glitch.me/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(details),
+    });
+    const role = `SELECT admin_id, developer_id,staff_id FROM staff WHERE email = "${email}"`;
+    if (response.ok) {
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      if (data.user[0].admin_id) {
+        navigate("/admin");
+      } else if (data.user[0].developer_id) {
+        navigate("/dev");
+      } else {
+        navigate("/staff");
+      }
     }
-  }
-}
+  };
 
   return (
-
-  
-
     <>
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -75,7 +65,8 @@ const handleSubmit = async (e) => {
                 display: "inline-block",
                 padding: "32px 48px 20px 48px",
                 borderRadius: "6px",
-              }}>
+              }}
+            >
               <form className="col s12" method="post" onSubmit={handleSubmit}>
                 <div className="section" />
                 <h5 className="black-text">Please login into your account</h5>
@@ -119,13 +110,15 @@ const handleSubmit = async (e) => {
                 <br />
                 <center>
                   <div className="row">
-                    <button onClick={Login}
+                    <button
+                      onClick={Login}
                       id="submit"
                       value="submit"
                       type="submit"
                       name="btn_login"
                       className="col s12 btn btn-large waves-effect teal lighten-2"
-                      style={{ borderRadius: "6px" }}>
+                      style={{ borderRadius: "6px" }}
+                    >
                       Login
                     </button>
                   </div>
