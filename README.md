@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+## CodeBeetle APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage
 
-## Available Scripts
+Welcome to our Ticket Submission and Management App! This application is designed to streamline the process of submitting, assigning, and tracking tickets for software development projects. Whether you're a staff member reporting an issue, a developer working on tickets, or an admin overseeing the process, this app provides a centralized platform for efficient ticket management. Below, you'll find comprehensive information on how to set up and utilize the CodeBeetle App effectively.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+User Authentication: Secure user authentication system ensures only authorized personnel can access the app.
+Role-Based Access Control: Granular access control based on user roles (staff, developers, admins) to manage permissions effectively.
+Report Submission: Staff members can submit tickets detailing issues, feature requests, or tasks that need attention.
+Ticket Assignment: Admins can assign tickets to developers based on their expertise and workload.
+Ticket Status Tracking: Track the progress of tickets as they move through various stages (e.g., in progress, completed) to ensure timely resolution.
+Installation
+To install the frontend, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Configurations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clone this repository by running the following command:
 
-### `npm test`
+- Clone repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+   git clone https://github.com/reggiecheston/capstone-front-end.git
+```
 
-### `npm run build`
+- Navigate to the cloned directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd capstone-front-end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Install dependencies:
 
-### `npm run eject`
+```bash
+    npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Run application:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+    npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app will run in the development mode. Open http://localhost:3000 to view it in your browser. The page will reload when you make changes, and you'll also see any lint errors in the console.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Testing
 
-## Learn More
+Cypress End-to-End Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We use Cypress for end-to-end testing to ensure the functionality of our application across different scenarios. To run Cypress tests locally, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ensure the frontend server is running. If not, start it using the following command:
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In a new terminal window, navigate to the project directory.
+Run Cypress using the following command: npm run cypress:open
+Cypress Test Runner will open. Click on any test file to run the tests.
 
-### Analyzing the Bundle Size
+You can also run tests in headless mode using the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run cypress:run
+```
 
-### Making a Progressive Web App
+View test results and logs in the terminal or Cypress dashboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Make sure to regularly run Cypress tests to verify the integrity of the application's functionality and catch any regressions early in the development process.
 
-### Advanced Configuration
+For more information on writing and organizing Cypress tests, refer to the Cypress documentation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Backend Repository
 
-### Deployment
+Backend Repository
+If you'd like to integrate the frontend with the backend, you'll need to set up and run the backend server separately. The backend repository for this project can be found at: https://github.com/reggiecheston/capstone-back-end.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone the backend repository and follow the instructions in its README to set up and run the backend server. Once the backend server is running, you can configure the frontend to communicate with it by updating the relevant configuration settings.
