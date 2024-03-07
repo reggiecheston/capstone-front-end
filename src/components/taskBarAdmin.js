@@ -57,15 +57,15 @@ const TaskBarAdmin = (props) => {
           <div className='container'>
             {Array.isArray(data) ? (
           console.log(data),
-              data.map((database) => (
+              data.map((reports) => (
                 <CollapsibleComponent
               
-                  category={database.category}
-                  priority={database.priority}
-                  title={database.title}
-                  summary={database.summary}
-                  dueDate={database.dueDate}
-                  staffId={database.staffId}
+                  category={reports.category}
+                  priority={reports.priority}
+                  title={reports.title}
+                  summary={reports.summary}
+                  dueDate={reports.dueDate}
+                  staffId={reports.staffId}
 
                 />
               ))
