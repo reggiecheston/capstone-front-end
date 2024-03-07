@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0",
+    "mysql2": "^3.9.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
