@@ -21,17 +21,17 @@ const CollapsibleComponent = (props) => {
         <li>
           <div className="collapsible-header black-text">
             <i className="material-icons">reorder</i>
-            {props.Category} 
-            <div className="right">{props.Priority}</div>
+            {props.category} 
+            <div className="right">{props.priority}</div>
           </div>
           
           <div className="collapsible-body black-text blue-grey lighten-4" id="ticketBody">
           <h5>{props?.Title}</h5>
 
-          <p id="summary" style={{ paddingTop: "10px" }}>{props?.Summary}</p>
-            <p id="datelineTop">Due Date:<div className="right">{props?.Date}</div></p>
+          <p id="summary" style={{ paddingTop: "10px" }}>{props?.summary}</p>
+            <p id="datelineTop">Due Date:<div className="right">{props?.dueDate}</div></p>
 
-            <div ><p id="datelineBottom">Issuing Staff:<div className="right">{props?.Staff}</div></p></div>
+            <div ><p id="datelineBottom">Issuing Staff:<div className="right">{props?.staff}</div></p></div>
 
             <MultipleSelect 
              Option1="Not Started"

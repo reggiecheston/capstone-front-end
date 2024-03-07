@@ -8,7 +8,9 @@ export default function Login() {
     return (
         <div>
             <Navbar></Navbar>
+            <main>
             <LoginForm></LoginForm>
+            </main>
             <Footer></Footer>
            
 

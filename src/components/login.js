@@ -56,7 +56,7 @@ export default function LoginForm() {
       />
 
       <div className="section" />
-      <main>
+    
         <center>
           <div className="container">
             <div
@@ -133,7 +133,7 @@ export default function LoginForm() {
         </center>
         <div className="section" />
         <div className="section" />
-      </main>
+      
     </>
   );
 }

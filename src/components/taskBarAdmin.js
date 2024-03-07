@@ -1,53 +1,37 @@
-
 import React, { useEffect, useState } from 'react';
-
-// import M from 'materialize-css';
 import '../css/style.css';
 import CollapsibleComponent from './collapseAdmin';
-// const mysql2 = require("mysql2");
-
-  // const database = mysql2.createConnection({
-  //   host: "database-1.c1suigess9hp.us-east-1.rds.amazonaws.com",
-  //   user: "admin",
-  //   password: "password",
-  //   database: "capstone_team_3",
-  // });
-
- //taskBarAdmin.js:39 SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON(anonymous)	@	taskBarAdmin.js:39
-
 
 const TaskBarAdmin = (props) => {
   const [data, setData] = useState([]);
 
+  const [category, setCategory] = useState("");
+  const [priority, setPriority] = useState("");
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
-   
-
-  useEffect((category, priority, title, summary, dueDate, staffId) => {
-    fetch("http://localhost:4000/admin", {
+  useEffect(() => {
+    fetch("http://localhost:4000/reports", {
       method: "POST",
       headers: {
-      'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        category:category,
-        priority:priority,
-        title:title,
-        summary:summary,
-        dueDate:dueDate,
-        staffId:staffId
-
+        category,
+        priority,
+        title,
+        summary,
+        dueDate,
+        staffId: props.staffId // Assuming staffId is passed as a prop
       }),
     })
       .then(res => res.json())
-      .then(data => {
-        
-
-
+      .then(responseData => {
+        setData(responseData); // Set the data returned from the fetch request
       })
       .catch(err => console.error(err));
-
-      
-  }, []);
+  }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
   return (
     <div className="col s12 m3">
@@ -55,18 +39,15 @@ const TaskBarAdmin = (props) => {
         <div className="card-content white-text">
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
           <div className='container'>
-            {Array.isArray(data) ? (
-          console.log(data),
+            {Array.isArray(data) && data.length > 0 ? (
               data.map((reports) => (
                 <CollapsibleComponent
-              
                   category={reports.category}
                   priority={reports.priority}
                   title={reports.title}
                   summary={reports.summary}
                   dueDate={reports.dueDate}
                   staffId={reports.staffId}
-
                 />
               ))
             ) : (
@@ -78,6 +59,5 @@ const TaskBarAdmin = (props) => {
     </div>
   );
 };
-
 
 export default TaskBarAdmin;

@@ -8,7 +8,9 @@ export default function Staff() {
     return (
         <div>
             <Navbar></Navbar>
+            <main>
             <StaffView></StaffView>
+            </main>
             <Footer></Footer>
         </div>
     )
