@@ -1,12 +1,16 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import M from 'materialize-css';
 import '../css/style.css';
 import MultipleSelect from './dropdown';    
 import { Form } from 'react-router-dom';
+import AssignDev from './assignDev';
 
 
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+};
 
 const CollapsibleComponent = (props) => {
   useEffect(() => {
@@ -24,11 +28,11 @@ const CollapsibleComponent = (props) => {
             <i className="material-icons">reorder</i>
             {props.Category} 
             <div className="right">{props.priority}</div>
-          </div>
+          </div >
           
           <div className="collapsible-body black-text blue-grey lighten-4" id="ticketBody">
           <h5><input className="center-align" type="text" placeholder={props?.title} /></h5>
-
+          <div onSubmit={handleSubmit}> 
             <p id="summary"><input  className="center-align" type="text" placeholder={props?.summary} /></p>
 
             <p id="datelineTop">Due Date:<div className="right">{props.dueDate} </div></p>
@@ -60,13 +64,14 @@ const CollapsibleComponent = (props) => {
 
 
 
-            <button className="btn waves-effect waves-light" type="submit" name="action">Update</button>
+            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={AssignDev}>Update</button>
             </div>
           </div>
-          
+           </div>
         </li>
       </ul>
     </div>
+   
   );
 };
 
