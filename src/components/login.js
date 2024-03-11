@@ -21,7 +21,7 @@ export default function LoginForm() {
       password: password,
     };
 
-    const response = await fetch("/login", {
+    const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
