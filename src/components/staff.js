@@ -15,6 +15,8 @@ export default function Staff() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false); // Define isLoading state
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false); // Add state for submission success
+
   // const [staffId, setStaffId] = useState(1);
 
   useEffect(() => {
@@ -65,21 +67,22 @@ export default function Staff() {
         console.log(response);
         throw new Error("Failed to submit report");
       }
-      console.log("hello");
-      const reportData = await response.json(); // Parse response JSON
-      console.log(reportData); // Log the response data
-
-      // Reset form fields after successful submission
-      setCategory("");
-      setPriority("");
-      setTitle("");
-      setSummary("");
-      setDueDate("");
+      setIsSubmitted(true); // Set submission success state to true
+      setIsLoading(false); // Set loading state back to false
       setError(null);
-      // setStaffId(1);
+      resetFormFields(); // Reset form fields upon successful submission
+      setTimeout(() => setIsSubmitted(false), 3000); // Hide success message after 3 seconds
     } catch (error) {
-      setError(error.message); // Set error state if request fails
+      setError(error.message);
+      setIsLoading(false); // Set loading state back to false if request fails
     }
+  };
+  const resetFormFields = () => {
+    setCategory("");
+    setPriority("");
+    setTitle("");
+    setSummary("");
+    setDueDate("");
   };
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
@@ -112,7 +115,7 @@ export default function Staff() {
         <div className="input-box">
           <input
             id="title"
-            required=""
+            required
             value={title}
             onChange={handleTitleChange}
             placeholder="Enter Project Name"
@@ -157,7 +160,7 @@ export default function Staff() {
           <div className="input-box">
             <label>Due Date</label>
             <input
-              required=""
+              required
               placeholder="Due Date"
               type="date"
               onChange={handleDueDateChange}
@@ -175,14 +178,18 @@ export default function Staff() {
             style={{ height: "150px" }}
           />
         </div>
-        <button className="teal lighten-2" type="submit  " disabled={isLoading} onClick={ReportFunction}>
+        <button
+          className="teal lighten-2"
+          type="submit  "
+          disabled={isLoading}
+          onClick={ReportFunction}>
           {" "}
           {/* Disable the button when isLoading is true */}
           {isLoading ? "Submitting..." : "Submit"}{" "}
           {/* Change button text based on isLoading */}
         </button>
-        {error && <p className="error">{error}</p>}{" "}
-        {/* Display error message if error occurs */}
+        {isSubmitted && <p className="success-message">Report Submitted</p>}
+        {error && <p className="error">{error}</p>}
       </form>
     </section>
   );
