@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const Login = (e) => {
@@ -9,10 +9,10 @@ export default function Login() {
     console.log(email, password);
     e.preventDefault();
 
-    fetch("localhost:3000/login", {
+    fetch("https://main.d2f9dfcljylhol.amplifyapp.com/login", {
       method: "POST",
       headers: {
-      'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: email,

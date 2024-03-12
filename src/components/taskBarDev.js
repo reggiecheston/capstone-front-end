@@ -12,7 +12,7 @@ const TaskBarDev = (props) => {
   const [dueDate, setDueDate] = useState("");
 
   useEffect(() => {
-    fetch("http://sql5.freemysqlhosting.net/tickets", {
+    fetch("https://sql5.freemysqlhosting.net/tickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

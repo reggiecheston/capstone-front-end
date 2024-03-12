@@ -46,7 +46,7 @@ export default function Staff() {
       // staffId: staffId,
     };
     try {
-      const response = await fetch("http://sql5.freemysqlhosting.net/staff", {
+      const response = await fetch("https://sql5.freemysqlhosting.net/staff", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -21,7 +21,7 @@ export default function LoginForm() {
       password: password,
     };
 
-    const response = await fetch("http://sql5.freemysqlhosting.net/login", {
+    const response = await fetch("https://sql5.freemysqlhosting.net/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
