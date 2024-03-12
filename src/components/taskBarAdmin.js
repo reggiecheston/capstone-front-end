@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import '../css/style.css';
-import CollapsibleComponent from './collapseAdmin';
+import React, { useEffect, useState } from "react";
+import "../css/style.css";
+import CollapsibleComponent from "./collapseAdmin";
 
 const TaskBarAdmin = (props) => {
   const [data, setData] = useState([]);
@@ -12,36 +12,37 @@ const TaskBarAdmin = (props) => {
   const [dueDate, setDueDate] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/reports", {
+    fetch("http://sql5.freemysqlhosting.net/reports", {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      
-        body: JSON.stringify({ 
-          title: title,
-          summary: summary,
-          category: category,
-          priority: priority,
-          dueDate: dueDate,
-          // staffId: staffId
+
+      body: JSON.stringify({
+        title: title,
+        summary: summary,
+        category: category,
+        priority: priority,
+        dueDate: dueDate,
+        // staffId: staffId
       }),
     })
-      .then(res => res.json())
-      .then(responseData => {
-
+      .then((res) => res.json())
+      .then((responseData) => {
         setData(responseData); // Set the data returned from the fetch request
         console.log(responseData);
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
   return (
     <div className="col s12 m6">
       <div className="card grey darken-2">
-        <div className="card-content white-text"  >
-          <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
-          <div className='container'>
+        <div className="card-content white-text">
+          <span className="card-title">
+            {props.Head} <div className="right">{props.Count}</div>
+          </span>
+          <div className="container">
             {Array.isArray(data) && data.length > 0 ? (
               data.map((reports) => (
                 <CollapsibleComponent

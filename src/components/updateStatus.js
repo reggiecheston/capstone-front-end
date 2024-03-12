@@ -1,26 +1,26 @@
-import React from 'react';
+import React from "react";
 
 export default function UpdateStatus({ reportId, status }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    fetch(`http://localhost:4000/reports/${reportId}`, {
-      method: 'PUT',
+
+    fetch(`http://sql5.freemysqlhosting.net/reports/${reportId}`, {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ status })
+      body: JSON.stringify({ status }),
     })
-    .then(response => response.json())
-    .then(data => {
-      if (data.error) {
-        console.log(data.error);
-        return;
-      } else {
-        console.log('Status updated successfully');
-      }
-    })
-    .catch(error => console.error('Error:', error));
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          console.log(data.error);
+          return;
+        } else {
+          console.log("Status updated successfully");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
   };
 
   return (

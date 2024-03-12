@@ -46,7 +46,7 @@ export default function Staff() {
       // staffId: staffId,
     };
     try {
-      const response = await fetch("http://localhost:4000/staff", {
+      const response = await fetch("http://sql5.freemysqlhosting.net/staff", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +116,8 @@ export default function Staff() {
             <select
               id="category"
               value={category}
-              onChange={handleCategoryChange}>
+              onChange={handleCategoryChange}
+            >
               <option value="" disabled></option>
               <option value="functional">functional</option>
               <option value="usability">usability</option>
@@ -136,7 +137,8 @@ export default function Staff() {
             <select
               id="priority"
               value={priority}
-              onChange={handlePriorityChange}>
+              onChange={handlePriorityChange}
+            >
               <option value="" disabled></option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
@@ -168,7 +170,8 @@ export default function Staff() {
           className="teal lighten-2"
           type="submit  "
           disabled={isLoading}
-          onClick={ReportFunction}>
+          onClick={ReportFunction}
+        >
           {" "}
           {/* Disable the button when isLoading is true */}
           {isLoading ? "Submitting..." : "Submit"}{" "}

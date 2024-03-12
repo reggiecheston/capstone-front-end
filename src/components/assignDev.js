@@ -4,7 +4,7 @@ export default function AssignDev({ summary, priority, title, category, dueDate}
     const handleSubmit = (e) => {
       e.preventDefault();
       
-      fetch('http://localhost:4000/updatedTickets', {
+      fetch('http://sql5.freemysqlhosting.net/updatedTickets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
