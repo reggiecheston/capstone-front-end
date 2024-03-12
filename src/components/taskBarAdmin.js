@@ -17,26 +17,29 @@ const TaskBarAdmin = (props) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        category,
-        priority,
-        title,
-        summary,
-        dueDate,
-        staffId: props.staffId // Assuming staffId is passed as a prop
+      
+        body: JSON.stringify({ 
+          title: title,
+          summary: summary,
+          category: category,
+          priority: priority,
+          dueDate: dueDate,
+          // staffId: staffId
       }),
     })
       .then(res => res.json())
       .then(responseData => {
+
         setData(responseData); // Set the data returned from the fetch request
+        console.log(responseData);
       })
       .catch(err => console.error(err));
   }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
   return (
-    <div className="col s12 m3">
+    <div className="col s12 m6">
       <div className="card grey darken-2">
-        <div className="card-content white-text">
+        <div className="card-content white-text"  >
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
           <div className='container'>
             {Array.isArray(data) && data.length > 0 ? (

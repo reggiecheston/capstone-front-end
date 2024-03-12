@@ -34,7 +34,7 @@ const TaskBarDev = (props) => {
   }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
   return (
-    <div className="col s12 m4">
+    <div className="col s12 m6">
       <div className="card grey darken-2">
         <div className="card-content white-text">
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
