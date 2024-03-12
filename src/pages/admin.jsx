@@ -12,20 +12,12 @@ export default function Admin() {
         <div>
             <Navbar />
                 <main>
-                    <div className="row">
+                    <div className="row" id="taskBox">
                         <TaskBarAdmin 
-                                Head="Escalated"
-                                Count="5"/>
+                                Head="Reports"
+                                Count="5 Total"/>
 
-                        <TaskBarAdmin
-                                Head="New"
-                                Count="5" />
-                        <TaskBarAdmin
-                                Head="In Progress"
-                                Count="5" />
-                        <TaskBarAdmin 
-                                Head="Completed"
-                                Count="5"/>
+                    
                     </div>
                 </main>
             <Footer />

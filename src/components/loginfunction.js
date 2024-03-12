@@ -9,7 +9,7 @@ export default function Login() {
     console.log(email, password);
     e.preventDefault();
 
-    fetch("https://code-beetle.glitch.me/login", {
+    fetch("localhost:3000/login", {
       method: "POST",
       headers: {
       'Content-Type': 'application/json',

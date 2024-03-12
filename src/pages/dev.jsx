@@ -12,17 +12,12 @@ export default function Dev() {
         <div>
             <Navbar />
                 <main>
-                    <div className="row">
+                    <div className="row" id="taskBox">
 
-                        <TaskBarDev
-                                Head="New"
-                                Count="5" />
-                        <TaskBarDev
-                                Head="In Progress"
-                                Count="5" />
+                      
                         <TaskBarDev 
-                                Head="Completed"
-                                Count="5"/>
+                                Head="Tickets"
+                                Count="3 Total"/>
                     </div>
                 </main>
             <Footer />

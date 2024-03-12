@@ -21,7 +21,7 @@ export default function LoginForm() {
       password: password,
     };
 
-    const response = await fetch("https://code-beetle.glitch.me/login", {
+    const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export default function LoginForm() {
       />
 
       <div className="section" />
-      <main>
+    
         <center>
           <div className="container">
             <div
@@ -133,7 +133,7 @@ export default function LoginForm() {
         </center>
         <div className="section" />
         <div className="section" />
-      </main>
+      
     </>
   );
 }

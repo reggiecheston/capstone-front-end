@@ -1,93 +1,66 @@
-
-import "../css/userViews.css";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import '../css/style.css';
 import CollapsibleComponent from './collapseAdmin';
 
+const TaskBarAdmin = (props) => {
+  const [data, setData] = useState([]);
 
+  const [category, setCategory] = useState("");
+  const [priority, setPriority] = useState("");
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
+  useEffect(() => {
+    fetch("http://localhost:4000/reports", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      
+        body: JSON.stringify({ 
+          title: title,
+          summary: summary,
+          category: category,
+          priority: priority,
+          dueDate: dueDate,
+          // staffId: staffId
+      }),
+    })
+      .then(res => res.json())
+      .then(responseData => {
 
-const TaskBarAdmin = (props) => (
-  <>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
-    />
+        setData(responseData); // Set the data returned from the fetch request
+        console.log(responseData);
+      })
+      .catch(err => console.error(err));
+  }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
-    <div className="col s12 m3">
+  return (
+    <div className="col s12 m6">
       <div className="card grey darken-2">
-        <div className="card-content white-text">
+        <div className="card-content white-text"  >
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
-          <CollapsibleComponent  
-          Category= "Category"
-          Priority= "Priority"
-          Title= "Project Title"
-          Summary= "Descriptionnn"
-          Date= "12/12/2021"
-          Staff= "Adrian Brown"/> 
-
-
-
+          <div className='container'>
+            {Array.isArray(data) && data.length > 0 ? (
+              data.map((reports) => (
+                <CollapsibleComponent
+                  category={reports.category}
+                  priority={reports.priority}
+                  title={reports.title}
+                  summary={reports.summary}
+                  dueDate={reports.dueDate}
+                  staffId={reports.staffId}
+                />
+              ))
+            ) : (
+              <p>No tickets available</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
-  </>
-);
-
-
-
+  );
+};
 
 export default TaskBarAdmin;
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-
-// import M from 'materialize-css';
-// import '../css/style.css';
-// import MultipleSelect from './dropdown';
-// import CollapsibleComponent from './collapse';
-// const TaskBarAdmin = () => {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     fetch("https://code-beetle.glitch.me/admin")
-//       .then(res => res.json())
-//       .then(data => {
-//         if (Array.isArray(data)) {
-//           setData(data);
-//         } else {
-//           console.error('Invalid data format');
-//         }
-//       })
-//       .catch(err => console.error(err));
-//   }, []);
-
-//   return (
-//     <div className='container'>
-//       {Array.isArray(data) ? (
-//         data.map((database) => (
-//           <CollapsibleComponent
-//             key={database.id}
-//             Category={database.Category}
-//             Priority={database.Priority}
-//             Title={database.Title}
-//             Summary={database.Summary}
-//             Date={database.Date}
-//             Staff={database.Staff}
-//           />
-//         ))
-//       ) : (
-//         <p>No tickets available</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TaskBarAdmin;
-

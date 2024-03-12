@@ -11,8 +11,7 @@ height:10vh
 }
 body {
     width: 100vw;
-    min-height: 63vh;
-    /* min-height: calc(99vh - 15.5rem); */
+    min-height: calc(99vh - 15.5rem);
    
   }
 
@@ -54,4 +53,24 @@ body {
 #supportBox{
     margin-top: 24px;
     font-weight: 600;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+main {
+    min-height: calc(100vh - 22.75rem);
+}
+
+.container2 {
+    margin-top: 0;
+}
+
+#taskBox{
+    margin-left:33%;
+    margin-top:3%;
+}
+#updateMessage{
+    margin-top: 5%;
 }

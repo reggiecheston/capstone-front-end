@@ -1,45 +1,65 @@
-
 import "../css/userViews.css";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CollapsibleComponent from './collapseDev';
 
+const TaskBarDev = (props) => {
+  const [data, setData] = useState([]);
 
+  const [category, setCategory] = useState("");
+  const [priority, setPriority] = useState("");
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
+  useEffect(() => {
+    fetch("http://localhost:4000/tickets", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        category,
+        priority,
+        title,
+        summary,
+        dueDate,
+        staffId: props.staffId // Assuming staffId is passed as a prop
+      }),
+    })
+      .then(res => res.json())
+      .then(responseData => {
+        setData(responseData); // Set the data returned from the fetch request
+      })
+      .catch(err => console.error(err));
+  }, [category, priority, title, summary, dueDate, props.staffId]); // Add dependencies here
 
-const TaskBarDev = (props) => (
-  <>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
-    />
-
-    <div className="col s12 m4">
+  return (
+    <div className="col s12 m6">
       <div className="card grey darken-2">
         <div className="card-content white-text">
           <span className="card-title">{props.Head} <div className="right">{props.Count}</div></span>
-          <CollapsibleComponent  
-          Category= "Category"
-          Priority= "Priority"
-          Title= "Project Title"
-          Summary= "Descriptionnn"
-          Date= "12/12/2021"
-          Staff= "Adrian Brown"/> 
-
-
-
+          <div className='container'>
+          {Array.isArray(data) && data.length > 0 ? (
+  data.map((tickets, index) => (
+    <CollapsibleComponent
+      key={index} // or use a unique id from your data if available, like tickets.id
+      category={tickets.category}
+      priority={tickets.priority}
+                  title={tickets.title}
+                  summary={tickets.summary}
+                  dueDate={tickets.dueDate}
+                  staffId={tickets.staffId}
+  
+    />
+  ))
+) : (
+  <p>No tickets available</p>
+)}
+          </div>
         </div>
       </div>
     </div>
-  </>
-);
-
-
-
+  );
+};
 
 export default TaskBarDev;
-
