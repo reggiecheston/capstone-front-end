@@ -10,7 +10,7 @@ export default function ReportFunction({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://sql5.freemysqlhosting.net/staff", {
+    fetch("https://code-beetle.glitch.me/staff", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

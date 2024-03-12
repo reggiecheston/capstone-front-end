@@ -4,7 +4,7 @@ export default function UpdateStatus({ reportId, status }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://sql5.freemysqlhosting.net/reports/${reportId}`, {
+    fetch(`https://code-beetle.glitch.me/reports/${reportId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

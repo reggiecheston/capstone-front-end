@@ -10,7 +10,7 @@ export default function AssignDev({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://sql5.freemysqlhosting.net/updatedTickets", {
+    fetch("https://code-beetle.glitch.me/updatedTickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -51,7 +51,7 @@ const CollapsibleComponent = (props) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://sql5.freemysqlhosting.net/updatedTickets",
+        "https://code-beetle.glitch.me/updatedTickets",
         {
           method: "POST",
           headers: {

@@ -9,7 +9,7 @@ export default function Login() {
     console.log(email, password);
     e.preventDefault();
 
-    fetch("https://main.d2f9dfcljylhol.amplifyapp.com/login", {
+    fetch("https://code-beetle.glitch.me/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

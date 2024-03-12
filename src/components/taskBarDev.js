@@ -12,7 +12,7 @@ const TaskBarDev = (props) => {
   const [dueDate, setDueDate] = useState("");
 
   useEffect(() => {
-    fetch("https://sql5.freemysqlhosting.net/tickets", {
+    fetch("https://code-beetle.glitch.me/tickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
