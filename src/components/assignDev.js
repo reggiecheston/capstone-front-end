@@ -32,7 +32,7 @@ export default function AssignDev({
         } else {
           localStorage.clear();
           localStorage.setItem("user", JSON.stringify(data.user));
-          window.location.href = data.user ? "/admin" : "/admin";
+          window.location.href = data.user ? "https://main.d2f9dfcljylhol.amplifyapp.com/admin" : "https://main.d2f9dfcljylhol.amplifyapp.com/admin";
         }
       })
       .catch((error) => console.error("Error:", error));

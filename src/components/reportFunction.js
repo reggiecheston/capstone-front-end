@@ -32,7 +32,9 @@ export default function ReportFunction({
         } else {
           localStorage.clear();
           localStorage.setItem("user", JSON.stringify(data.user));
-          window.location.href = data.user.isAdmin ? "/admin" : "/dashboard";
+          window.location.href = data.user.isAdmin
+            ? "https://main.d2f9dfcljylhol.amplifyapp.com/admin"
+            : "https://main.d2f9dfcljylhol.amplifyapp.com/dashboard";
         }
       })
       .catch((error) => console.error("Error:", error));
